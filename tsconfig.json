@@ -6,7 +6,8 @@
 		"jsxImportSource": "solid-js",
 		"paths": {
 			"~/components/*": ["src/components/*"],
-			"~/layouts/*": ["src/layouts/*"]
+			"~/layouts/*": ["src/layouts/*"],
+			"~/*": ["src/*"]
 		}
 	}
 }
