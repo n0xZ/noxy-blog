@@ -8,10 +8,10 @@ import {
 
 export default defineConfig({
 	presets: [
-		presetUno(),
+		presetUno({ dark: 'class' }),
 		presetWebFonts({
 			provider: 'google',
-			fonts: { figtree: 'Figtree', inter: 'Inter' },
+			fonts: { sarawabi: 'Sawarabi Gothic' },
 		}),
 		presetTypography(),
 		presetIcons(),
