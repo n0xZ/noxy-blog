@@ -1,4 +1,10 @@
-import { defineConfig, presetUno, presetWebFonts, presetIcons } from 'unocss'
+import {
+	defineConfig,
+	presetUno,
+	presetWebFonts,
+	presetIcons,
+	presetTypography,
+} from 'unocss'
 
 export default defineConfig({
 	presets: [
@@ -7,6 +13,7 @@ export default defineConfig({
 			provider: 'google',
 			fonts: { figtree: 'Figtree', inter: 'Inter' },
 		}),
+		presetTypography(),
 		presetIcons(),
 	],
 })
