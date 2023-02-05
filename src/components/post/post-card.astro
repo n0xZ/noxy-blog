@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+type Props = {
+	posts: CollectionEntry<'post'>[]
+}
+const { posts } = Astro.props as Props
+---
+
+<article class="grid grid-rows-5 h-screen  gap-4 w-full place-items-center mt-6 ">
+	{
+		posts.map((post) => (
+			<a
+				href={`/post/${post.slug}`}
+				class="h-full w-full pl-9 rounded-lg border-2 border-gray-100 dark:border-dark-800  decoration-none  "
+			>
+				<h2 class="text-2xl">{post.data.title}</h2>
+				<time class="c-gray-400 dark:c-gray-600" datetime={post.data.pubDate}>{post.data.pubDate}</time>
+			</a>
+		))
+	}
+</article>
