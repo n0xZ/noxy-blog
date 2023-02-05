@@ -1,0 +1,77 @@
+---
+import { Image } from '@astrojs/image/components'
+import ThemeSwitcher from '~/components/theme/theme-switcher'
+import noxyImage from '~/images/noxy.jpg'
+type Props = {
+	title: string
+}
+const { title }: Props = Astro.props
+---
+
+<html lang="en" class="scroll-smooth" >
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body
+		class="c-neutral-800 dark:c-neutral-100 dark:bg-dark-900 text-md font-sarawabi"
+	>
+		<header class="p-7">
+			<nav
+				class="flex flex-row items-center justify-between w-full container mx-auto max-w-xl"
+			>
+				<a href="/"
+					><Image
+						src={noxyImage}
+						class="rounded-full duration-100 ease-in-out shadow-lg hover:shadow-rose-200"
+						width={36}
+						height={36}
+						alt="Imagen de mi avatar"
+					/></a
+				>
+				<ul class="flex flex-row items-center space-x-5">
+					<li>
+						<a href="https://twitter.com/undefin0x" target="_blank" rel="noreferrer"
+							><svg
+								fill="currentColor"
+								stroke-width="0"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								height="1em"
+								width="1em"
+								class="h-6 w-6 hover:opacity-60 duration-100 ease-in-out"
+								><path
+									d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
+								></path></svg
+							></a
+						>
+					</li>
+					<li>
+						<a href="https://github.com/n0xZ" target="_blank" rel="noreferrer">
+							<svg
+								fill="currentColor"
+								stroke-width="0"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 1024 1024"
+								height="1em"
+								width="1em"
+								class="h-6 w-6 hover:opacity-60 duration-100 ease-in-out"
+								><path
+									d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"
+								></path></svg
+							>
+						</a>
+					</li>
+					<li><ThemeSwitcher client:load /></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main class="container mx-auto max-w-xl  ">
+			<slot />
+		</main>
+	</body>
+</html>
