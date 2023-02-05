@@ -31,26 +31,28 @@ function SunIcon() {
 	)
 }
 export default function ThemeSwitcher() {
-	const defaultTheme =
-		typeof localStorage.getItem('theme') !== null
+	const defaultTheme = !import.meta.env.SSR
+		? typeof localStorage.getItem('theme') !== null
 			? localStorage.getItem('theme')
-			: 'light'
+			: 'dark'
+		: undefined
+
 	const [theme, setTheme] = createSignal(defaultTheme)
 
 	function toggleTheme() {
 		setTheme(theme() === 'dark' ? 'light' : 'dark')
 	}
 	createEffect(() => {
+		const rootEl = document.documentElement
+		if (theme()) localStorage.setItem('theme', theme() as string)
 		if (theme() === 'dark') {
-			document.documentElement.classList.remove('light')
-			document.documentElement.classList.add('dark')
+			rootEl.classList.remove('light')
+			rootEl.classList.add('dark')
 		}
 		if (theme() === 'light') {
-			document.documentElement.classList.remove('dark')
-			document.documentElement.classList.add('light')
+			rootEl.classList.remove('dark')
+			rootEl.classList.add('light')
 		}
-
-		if (theme()) localStorage.setItem('theme', theme() as string)
 	})
 	return (
 		<>
