@@ -11,7 +11,12 @@ export default defineConfig({
 		presetUno({ dark: 'class' }),
 		presetWebFonts({
 			provider: 'google',
-			fonts: { sarawabi: 'Sawarabi Gothic' },
+			fonts: {
+				sarawabi: [
+					{ name: 'Sawarabi Gothic', weights: ['400', '500'] },
+					{ name: 'sans-serif', provider: 'none' },
+				],
+			},
 		}),
 		presetTypography(),
 		presetIcons(),
