@@ -15,6 +15,16 @@ const { title }: Props = Astro.props
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<script is:inline>
+		const rootEl = document.documentElement
+		const theme = localStorage.getItem("theme")
+
+	if(theme){
+			if(theme ) rootEl.classList.add(theme)
+		else rootEl.classList.add("light")
+	}
+		</script>
 	</head>
 	<body
 		class="c-neutral-800 dark:c-neutral-100 dark:bg-dark-900 text-md font-sarawabi"
@@ -68,7 +78,7 @@ const { title }: Props = Astro.props
 							>
 						</a>
 					</li>
-					<li><ThemeSwitcher client:idle /></li>
+					<li><ThemeSwitcher client:load /></li>
 				</ul>
 			</nav>
 		</header>

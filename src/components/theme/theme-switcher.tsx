@@ -44,14 +44,16 @@ export default function ThemeSwitcher() {
 	}
 	createEffect(() => {
 		const rootEl = document.documentElement
-		if (theme()) localStorage.setItem('theme', theme() as string)
-		if (theme() === 'dark') {
-			rootEl.classList.remove('light')
-			rootEl.classList.add('dark')
-		}
-		if (theme() === 'light') {
-			rootEl.classList.remove('dark')
-			rootEl.classList.add('light')
+		if (!import.meta.env.SSR) {
+			if (theme()) localStorage.setItem('theme', theme() as string)
+			if (theme() === 'dark') {
+				rootEl.classList.remove('light')
+				rootEl.classList.add('dark')
+			}
+			if (theme() === 'light') {
+				rootEl.classList.remove('dark')
+				rootEl.classList.add('light')
+			}
 		}
 	})
 	return (
