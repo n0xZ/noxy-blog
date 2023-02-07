@@ -8,7 +8,7 @@ type Props = {
 const { title }: Props = Astro.props
 ---
 
-<html lang="en"  >
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -17,32 +17,31 @@ const { title }: Props = Astro.props
 		<title>{title}</title>
 
 		<script is:inline>
-		const rootEl = document.documentElement
-		const theme = localStorage.getItem("theme")
+			const rootEl = document.documentElement
+			const theme = localStorage.getItem('theme')
 
-	if(theme) rootEl.classList.add(theme)
-
-	
+			if (theme) rootEl.classList.add(theme)
+			else rootEl.classList.remove('dark')
 		</script>
 	</head>
 	<body
-		class="c-neutral-800 dark:c-neutral-100 dark:bg-dark-900 text-md font-sarawabi"
+		class="c-neutral-800 dark:c-neutral-100 dark:bg-dark-900 text-md "
 	>
-		<header class="p-7 top-0 sticky z-0 dark:bg-dark-900  bg-white">
+		<header class="p-7 top-0 sticky z-10 dark:bg-dark-900 bg-white">
 			<nav
 				class="flex flex-row items-center justify-between w-full container mx-auto max-w-xl"
 			>
-				<a href="/" 
+				<a href="/"
 					><Image
 						src={noxyImage}
-						class="rounded-full duration-100 ease-in-out  hover:opacity-60 duration-100 ease-in-out"
+						class="rounded-full duration-100 ease-in-out hover:opacity-60 duration-100 ease-in-out"
 						width={44}
 						height={44}
+						aspectRatio={1}
 						alt="Imagen de mi avatar"
+						format="webp"
 					/>
-			
-					</a
-				>
+				</a>
 				<ul class="flex flex-row items-center space-x-5">
 					<li>
 						<a href="https://twitter.com/undefin0x" target="_blank" rel="noreferrer"
@@ -59,7 +58,6 @@ const { title }: Props = Astro.props
 								></path></svg
 							></a
 						>
-						
 					</li>
 					<li>
 						<a href="https://github.com/n0xZ" target="_blank" rel="noreferrer">
@@ -82,7 +80,7 @@ const { title }: Props = Astro.props
 			</nav>
 		</header>
 
-		<main class="container mx-auto max-w-xl  ">
+		<main class="container mx-auto max-w-xl">
 			<slot />
 		</main>
 	</body>
