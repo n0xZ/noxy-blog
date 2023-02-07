@@ -8,7 +8,7 @@ type Props = {
 const { title }: Props = Astro.props
 ---
 
-<html lang="en" class="scroll-smooth" >
+<html lang="en"  >
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -21,7 +21,7 @@ const { title }: Props = Astro.props
 		const theme = localStorage.getItem("theme")
 
 	if(theme) rootEl.classList.add(theme)
-		else rootEl.classList.add("light")
+
 	
 		</script>
 	</head>
@@ -32,7 +32,7 @@ const { title }: Props = Astro.props
 			<nav
 				class="flex flex-row items-center justify-between w-full container mx-auto max-w-xl"
 			>
-				<a href="/" class="flex flex-row items-center space-x-2"
+				<a href="/" 
 					><Image
 						src={noxyImage}
 						class="rounded-full duration-100 ease-in-out  hover:opacity-60 duration-100 ease-in-out"
@@ -40,7 +40,7 @@ const { title }: Props = Astro.props
 						height={44}
 						alt="Imagen de mi avatar"
 					/>
-					<span class="font-medium">Noxy</span>
+			
 					</a
 				>
 				<ul class="flex flex-row items-center space-x-5">
