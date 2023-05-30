@@ -25,11 +25,11 @@ const { title }: Props = Astro.props
 		</script>
 	</head>
 	<body
-		class="c-neutral-800 dark:c-neutral-100 dark:bg-dark-900 text-md "
+		class="c-neutral-800 dark:c-neutral-100 dark:bg-dark-900 text-md font-rubik"
 	>
 		<header class="p-7 top-0 sticky z-10 dark:bg-dark-900 bg-white">
 			<nav
-				class="flex flex-row items-center justify-between w-full container mx-auto max-w-xl"
+				class="flex flex-row items-center justify-between w-full container mx-auto max-w-4xl"
 			>
 				<a href="/"
 					><Image
@@ -80,7 +80,7 @@ const { title }: Props = Astro.props
 			</nav>
 		</header>
 
-		<main class="container mx-auto max-w-xl">
+		<main class="container mx-auto max-w-4xl">
 			<slot />
 		</main>
 	</body>
