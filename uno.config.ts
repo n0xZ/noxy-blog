@@ -1,5 +1,14 @@
-import { defineConfig, presetUno, presetTypography } from 'unocss'
+import {
+	defineConfig,
+	presetUno,
+	presetTypography,
+	presetWebFonts,
+} from 'unocss'
 
 export default defineConfig({
-	presets: [presetUno({ dark: 'class' }), presetTypography()],
+	presets: [
+		presetUno({ dark: 'class' }),
+		presetTypography(),
+		presetWebFonts({ provider: 'google', fonts: { rubik: 'Rubik' } }),
+	],
 })
