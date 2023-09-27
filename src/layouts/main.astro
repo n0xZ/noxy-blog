@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
 import ThemeSwitcher from "~/components/theme/theme-switcher";
+import "@unocss/reset/tailwind-compat.css";
 
 type Props = {
 	title: string;
@@ -86,7 +88,8 @@ const { title }: Props = Astro.props;
 			</nav>
 		</header>
 
-		<main class="container mx-auto max-w-4xl">
+		<main class="container mx-auto max-w-4xl" transition:animate="fade">
+			<ViewTransitions />
 			<slot />
 		</main>
 	</body>
