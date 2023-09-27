@@ -1,17 +1,14 @@
 ---
 import MainLayout from "~/layouts/main.astro";
-import {getCollection} from 'astro:content'
+import { getCollection } from "astro:content";
 import PostCard from "~/components/post/post-card.astro";
-const posts = await getCollection("post")
-
+const posts = await getCollection("post");
 ---
 
 <MainLayout title="Bienvenido a Landyx!">
+    <section class="p-4 prose prose-md w-full max-w-4xl h-screen">
+        <h1 class="font-semibold">Noxy / más recientes</h1>
 
-<section class=" p-4 prose lg:prose-lg xl:prose-xl md:prose-md w-full max-w-4xl ">
-<h1  class=" font-semibold  ">Noxy / más recientes</h1>
-
-<PostCard posts={posts}/>
-
-</section>
+        <PostCard posts={posts} />
+    </section>
 </MainLayout>
