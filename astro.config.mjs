@@ -4,9 +4,9 @@ import Unocss from 'unocss/astro';
 import solidJs from '@astrojs/solid-js';
 
 // https://astro.build/config
-import image from "@astrojs/image";
+
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs(), Unocss(), image()]
+  integrations: [solidJs(), Unocss()]
 });
