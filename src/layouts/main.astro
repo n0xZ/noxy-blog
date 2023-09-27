@@ -1,11 +1,11 @@
 ---
-import { Image } from '@astrojs/image/components'
-import ThemeSwitcher from '~/components/theme/theme-switcher'
-import noxyImage from '~/images/noxy.webp'
+import { Image } from "astro:assets";
+import ThemeSwitcher from "~/components/theme/theme-switcher";
+
 type Props = {
-	title: string
-}
-const { title }: Props = Astro.props
+	title: string;
+};
+const { title }: Props = Astro.props;
 ---
 
 <html lang="en">
@@ -17,11 +17,11 @@ const { title }: Props = Astro.props
 		<title>{title}</title>
 
 		<script is:inline>
-			const rootEl = document.documentElement
-			const theme = localStorage.getItem('theme')
+			const rootEl = document.documentElement;
+			const theme = localStorage.getItem("theme");
 
-			if (theme) rootEl.classList.add(theme)
-			else rootEl.classList.remove('dark')
+			if (theme) rootEl.classList.add(theme);
+			else rootEl.classList.remove("dark");
 		</script>
 	</head>
 	<body
@@ -37,14 +37,16 @@ const { title }: Props = Astro.props
 						class="rounded-full duration-100 ease-in-out hover:opacity-60 duration-100 ease-in-out"
 						width={44}
 						height={44}
-						aspectRatio={1}
 						alt="Imagen de mi avatar"
 						format="webp"
 					/>
 				</a>
 				<ul class="flex flex-row items-center space-x-5">
 					<li>
-						<a href="https://twitter.com/undefin0x" target="_blank" rel="noreferrer"
+						<a
+							href="https://twitter.com/undefin0x"
+							target="_blank"
+							rel="noreferrer"
 							><svg
 								fill="currentColor"
 								stroke-width="0"
@@ -60,7 +62,11 @@ const { title }: Props = Astro.props
 						>
 					</li>
 					<li>
-						<a href="https://github.com/n0xZ" target="_blank" rel="noreferrer">
+						<a
+							href="https://github.com/n0xZ"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<svg
 								fill="currentColor"
 								stroke-width="0"
